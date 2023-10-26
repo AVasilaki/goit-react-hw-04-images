@@ -16,6 +16,7 @@ export class App extends Component {
   onLoadMore = () => {
     this.setState(prevState => ({
       page: (prevState.page += 1),
+      loader: true,
     }));
     console.log(this.state.page);
   };
