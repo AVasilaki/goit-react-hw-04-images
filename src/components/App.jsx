@@ -49,6 +49,7 @@ export class App extends Component {
         return resp;
       } catch (error) {
         console.error(error);
+        alert('something wrong');
         return error;
       } finally {
         this.setState({ loader: false });
