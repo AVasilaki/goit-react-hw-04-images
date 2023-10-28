@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
 import { Audio } from 'react-loader-spinner';
