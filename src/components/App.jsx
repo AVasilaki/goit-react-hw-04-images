@@ -37,7 +37,7 @@ export class App extends Component {
 
     if (prew.keyWord !== keyWord || prew.page !== page) {
       this.setState({ loader: true });
-      console.log(' prev page', prew.page, 'page', page);
+      console.log(' pre page', prew.page, 'page', page);
       try {
         const resp = await fetchApi(page, keyWord);
 
