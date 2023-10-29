@@ -12,6 +12,6 @@ export const fetchApi = async (page, keyWord) => {
       page: page,
     },
   });
-  console.log(resp);
+  console.log('api', resp);
   return resp;
 };
