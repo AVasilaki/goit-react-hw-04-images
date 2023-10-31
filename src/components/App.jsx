@@ -29,8 +29,6 @@ export const App = () => {
       try {
         const resp = await fetchApi(page, keyword);
         setImages(p => [...p, ...resp.data.hits]);
-        // console.log('images', images);
-        // return resp;
       } catch (error) {
         console.error(error);
         alert('something wrong');
