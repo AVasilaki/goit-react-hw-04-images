@@ -4,6 +4,7 @@ import { fetchApi } from 'api/api';
 import { Searchbar } from './Searchbar/Searchbar';
 import { Audio } from 'react-loader-spinner';
 import { ImageGallery } from './ImageGallery/ImageGallery';
+
 export const App = () => {
   const [keyword, setKeyword] = useState('');
   const [images, setImages] = useState([]);
