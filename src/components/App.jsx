@@ -9,6 +9,7 @@ export const App = () => {
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
   const [loader, setLoader] = useState(false);
+  const [btnLoadMore, setBtnLoadMore] = useState(false);
 
   const onLoadMore = () => {
     setPage(page + 1);
@@ -29,6 +30,10 @@ export const App = () => {
       try {
         const resp = await fetchApi(page, keyword);
         setImages(p => [...p, ...resp.data.hits]);
+        setBtnLoadMore(true);
+        page * 12 > resp.data.totalHits
+          ? setBtnLoadMore(false)
+          : setBtnLoadMore(true);
       } catch (error) {
         console.error(error);
         alert('something wrong');
@@ -44,7 +49,9 @@ export const App = () => {
       <Searchbar onChange={onChange}></Searchbar>
       <ImageGallery galery={images}></ImageGallery>
       <Audio visible={loader} />
-      <Button galery={images.length} onLoadMore={onLoadMore}></Button>
+      {btnLoadMore && (
+        <Button galery={images.length} onLoadMore={onLoadMore}></Button>
+      )}
     </div>
   );
 };
